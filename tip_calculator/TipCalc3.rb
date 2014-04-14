@@ -6,11 +6,15 @@ tax = Float(gets)
 puts "Please enter the tip rate:"
 tip = Float(gets)
 
-#This section calculates output
-tax_value = meal * (tax/100)
+def meal_calculator(x,y)
+    x * (y/100)
+end
+
+tax_value = meal_calculator(meal, tax)
+tip_value = meal_calculator(meal, tip)
 meal_with_tax = meal + tax_value
-tip_value = meal_with_tax * (tip/100)
 total_cost = meal_with_tax + tip_value
+
 
 #This section prints output
 puts "The pre-tax cost of your meal was" + " $" + sprintf("%2.2f", meal.to_s)
